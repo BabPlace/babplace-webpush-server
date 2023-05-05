@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "babplace node.js webpush server",
   "main": "src/app.ts",
-  "type": "module",
   "scripts": {
     "clean": "[ -e .data/db.json ] && rm .data/db.json",
     "start": "yarn clean; node dist/app.js;",

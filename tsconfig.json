@@ -3,13 +3,21 @@
     "target": "es2016",
     "module": "commonjs",
     "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
+    "removeComments": true,
+    "sourceMap": true,
     "strict": true,
     "skipLibCheck": true,
     "outDir": "./dist",
-    "rootDir": "./src",
+    "baseUrl": "./src", // setting a value for baseUrl is required
+    "moduleResolution": "node", // was not set before, but is the default
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./*"]
     }
-  }
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules"]
 }
