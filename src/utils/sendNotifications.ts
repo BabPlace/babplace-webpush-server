@@ -5,9 +5,10 @@ import { vapidDetails, removeUndefinedFromVapidDetails } from '@/config/options'
 function sendNotifications(subscriptions: Array<PushSubscription>) {
   // Create the notification content.
   const notification = JSON.stringify({
-    title: 'Hello, Notifications!',
+    title: '[밥풀레이스]',
     options: {
-      body: `ID: ${Math.floor(Math.random() * 100)}`,
+      // body: `ID: ${Math.floor(Math.random() * 100)}`,
+      body: `투표가 완료되었습니다.`,
     },
   });
 

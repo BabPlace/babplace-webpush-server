@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import router from './routes';
 import { AddressInfo } from 'net';
 import { corsOptions } from './config/options';
+import 'dotenv/config'
 
 const app = express();
 const port = 6003;
