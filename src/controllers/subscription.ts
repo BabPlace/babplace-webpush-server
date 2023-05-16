@@ -4,7 +4,13 @@ import type { PushSubscription } from 'web-push';
 
 async function addSubscription(request: Request<{}, {}, PushSubscription>, response: Response) {
   console.log(`Subscribing ${request.body.endpoint}`);
-  db.get('subscriptions').push(request.body).write();
+  const endPoint = request.body.endpoint;
+  const sub = db.get('subscriptions');
+  const subscriptions = sub.cloneDeep().value().filter(v=>endPoint.includes(v.endpoint));
+  if (subscriptions.length > 0)
+    console.log("already subscribe");
+  else
+    sub.push(request.body).write();
   response.sendStatus(200);
 }
 
